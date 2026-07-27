@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,28 +77,42 @@
 <body>
   <div class="container">
 
+    <nav>
+      <a href="#" data-i18n="nav_home">Home</a>
+      <select id="lang-switcher">
+        <option value="en">English</option>
+        <option value="lu">Lëtzebuergesch</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </nav>
+
     <h1>Espace W5</h1>
     <h1 class="subtitle">COEXIST</h1>
 
     <div class="section">
-      <h2>Exhibition opening:</h2>
+      <h2 data-i18n="exhibition_opening">Exhibition opening:</h2>
       <p>13.11.2026</p>
     </div>
 
     <div class="section">
-      <p class="label">Exhibition period:</p>
+      <p class="label" data-i18n="exhibition_period">Exhibition period:</p>
       <p>13.11.2026 – 22.11.2026</p>
     </div>
 
     <div class="section">
-      <p class="label">Project description</p>
-      <p>
-        (Here you can add your description later.)
+      <p class="label" data-i18n="project_description">Project description</p>
+      <p data-i18n="project_description_text">
+        COEXIST is an artistic project taking place on the premises of an old residential building in Luxembourg City.
+        The project combines a residency programme for artists from various disciplines and backgrounds with a related
+        exhibition. The programme also includes a series of workshops that relate to the exhibition in terms of theme
+        and content, as well as a small art and flea market.\n\nThe format is designed to invite the public to immerse
+        themselves in a creative world and explore the theme of coexistence together with the artists. We welcome
+        everyone to come and coexist with us :)
       </p>
     </div>
 
     <div class="section">
-      <p class="label">Artists:</p>
+      <p class="label" data-i18n="participating_artists">Participating Artists:</p>
       <div class="artists">
         <p>Aleksandra Ratkovic</p>
         <p>Bianca Cabezas Osiander</p>
@@ -114,13 +129,30 @@
     </div>
 
     <div class="section">
+      <p class="label" data-i18n="program">Program</p>
+      <p class="program_text">To be announced :)</p>
+    </div>
+
+    <div class="section">
+      <p class="label" data-i18n="location">Location:</p>
+      <p>(here you can add the location :))</p>
+    </div>
+
+    <div class="section">
       <p>
-        Instagram: <a href="https://instagram.com/espace_w5" target="_blank">@espace_w5</a>
+        <span data-i18n="instagram">Instagram:</span>
+        <a href="https://instagram.com/espace_w5" target="_blank">@espace_w5</a>
       </p>
-      <p><a href="/contact">Contact</a></p>
-      <p><a href="/impressum">Impressum</a></p>
+      <p>
+        <span data-i18n="contact">Contact:</span>
+        <a>some random email</a>
+      </p>
+      <p><a href="/impressum" data-i18n="impressum">Impressum</a></p>
     </div>
 
   </div>
+
+  <script src="languages.js"></script>
 </body>
+
 </html>
