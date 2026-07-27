@@ -7,7 +7,7 @@ const storageKey = 'user-language';
 async function setLanguage(lang) {
   try {
     // Request localized JSON dictionary
-    const response = await fetch(`/code/locales/${lang}.json`);
+    const response = await fetch(`/locales/${lang}.json`);
     if (!response.ok) throw new Error(`Could not load ${lang} translations.`);
     const translations = await response.json();
 
