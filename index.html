@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Espace W5</title>
 
+  <link rel="icon" type="image/png" href="content/bervard_2026.07_Logo3.png">
+
   <style>
     body {
       font-family: Helvetica, Arial, sans-serif;
@@ -71,23 +73,78 @@
     .artists p {
       margin: 3px 0;
     }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 20px 32px;
+
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 50px;
+      display: block;
+    }
+
+    .artists img {
+      height: 800px;
+      display: block;
+    }
+
+    .title img {
+      height: 100px;
+      display: block;
+    }
+
+    #lang-switcher button {
+      all: unset;
+      cursor: pointer;
+      font-family: inherit;
+      border-radius: 6px;
+      padding-top: 3px;
+      padding-right: 7px;
+      padding-bottom: 1px;
+      padding-left: 7px;
+    }
+
+    #lang-switcher button.active {
+      background: #e8e8e8;
+    }
   </style>
 </head>
 
 <body>
+
+  <header class="site-header">
+    <a href="/" class="logo">
+      <img src="content/bervard_2026.07_Logo1.jpg" alt="Espace W5">
+    </a>
+
+    <div id="lang-switcher">
+      <button data-lang="en">EN</button>
+      |
+      <button data-lang="lu">LU</button>
+      |
+      <button data-lang="de">DE</button>
+    </div>
+
+  </header>
+
   <div class="container">
 
-    <nav>
-      <a href="#" data-i18n="nav_home">Home</a>
-      <select id="lang-switcher">
-        <option value="en">English</option>
-        <option value="lu">Lëtzebuergesch</option>
-        <option value="de">Deutsch</option>
-      </select>
-    </nav>
-
-    <h1>Espace W5</h1>
-    <h1 class="subtitle">COEXIST</h1>
+    <div class="title">
+      <img src="content/bervard_2026.07_Coexist3.svg" alt="Coexist">
+    </div>
 
     <div class="section">
       <h2 data-i18n="exhibition_opening">Exhibition opening:</h2>
@@ -114,17 +171,8 @@
     <div class="section">
       <p class="label" data-i18n="participating_artists">Participating Artists:</p>
       <div class="artists">
-        <p>Aleksandra Ratkovic</p>
-        <p>Bianca Cabezas Osiander</p>
-        <p>Emma Bervard</p>
-        <p>Huy Shan Zhou</p>
-        <p>Léa Giordano</p>
-        <p>Lina Hédo</p>
-        <p>Martine Hemmer</p>
-        <p>Mariette Ries</p>
-        <p>Maya Gräfin von Matuschka</p>
-        <p>Misch Bervard</p>
-        <p>Paula Hornickel</p>
+        <img src="content/bervard_2026.06_Artists.svg"
+          alt="Aleksandra Ratkovic, Bianca Cabezas Osiander, Emma Bervard, Huy Shan Zhou, Léa Giordano, Lina Hédo, Martine Hemmer, Mariette Ries, Maya Gräfin von Matuschka, Misch Bervard, Paula Hornickel">
       </div>
     </div>
 

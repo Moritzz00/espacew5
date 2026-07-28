@@ -22,7 +22,9 @@ async function setLanguage(lang) {
     // Update root metadata for accessibility and SEO
     document.documentElement.lang = lang;
     localStorage.setItem(storageKey, lang);
-    document.getElementById('lang-switcher').value = lang;
+    document.querySelectorAll('#lang-switcher button').forEach(button => {
+      button.classList.toggle('active', button.dataset.lang === lang);
+    });
   } catch (error) {
     console.error('Translation error:', error);
   }
@@ -39,9 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
       : defaultLang;
 
 
-  // Bind dropdown element listener
-  document.getElementById('lang-switcher').addEventListener('change', (e) => {
-    setLanguage(e.target.value);
+  // Bind buttons element listener
+  document.querySelectorAll('#lang-switcher button').forEach(button => {
+    button.addEventListener('click', () => {
+      setLanguage(button.dataset.lang);
+    });
   });
 
   // Run initial state load
