@@ -76,8 +76,7 @@
 
     .site-header {
       position: sticky;
-      top: 0;
-      top: 0;
+      top: 10px;
       left: 0;
       width: 100%;
       box-sizing: border-box;
@@ -92,18 +91,40 @@
     }
 
     .logo img {
-      height: 50px;
+      height: 60px;
       display: block;
+    }
+
+    @media (max-width: 600px) {
+      .logo img {
+        margin-left: -10px;
+      }
     }
 
     .artists img {
       height: 800px;
       display: block;
+      margin-left: -15px;
+    }
+
+    @media (max-width: 600px) {
+      .artists img {
+        height: 400px;
+        margin-left: -6px;
+      }
     }
 
     .title img {
-      height: 100px;
+      height: 200px;
       display: block;
+      margin-left: -75px;
+    }
+
+    @media (max-width: 600px) {
+      .title img {
+        height: 100px;
+        margin-left: -34px;
+      }
     }
 
     #lang-switcher button {
@@ -127,7 +148,7 @@
 
   <header class="site-header">
     <a href="/" class="logo">
-      <img src="content/bervard_2026.07_Logo1.jpg" alt="Espace W5">
+      <img src="content/bervard_2026.07_Logo3.jpg" alt="Espace W5">
     </a>
 
     <div id="lang-switcher">
@@ -143,7 +164,7 @@
   <div class="container">
 
     <div class="title">
-      <img src="content/bervard_2026.07_Coexist3.svg" alt="Coexist">
+      <img src="content/bervard_2026.07_Coexist HD.jpg" alt="Coexist">
     </div>
 
     <div class="section">
@@ -171,7 +192,7 @@
     <div class="section">
       <p class="label" data-i18n="participating_artists">Participating Artists:</p>
       <div class="artists">
-        <img src="content/bervard_2026.06_Artists.svg"
+        <img src="content/bervard_2026.06_Artists.jpg"
           alt="Aleksandra Ratkovic, Bianca Cabezas Osiander, Emma Bervard, Huy Shan Zhou, Léa Giordano, Lina Hédo, Martine Hemmer, Mariette Ries, Maya Gräfin von Matuschka, Misch Bervard, Paula Hornickel">
       </div>
     </div>
