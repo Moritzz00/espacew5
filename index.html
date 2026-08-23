@@ -28,13 +28,31 @@
       align-items: center;
 
       background: #fff;
+    }
+
+    .door-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .door-top-image {
+      width: 150px;
+      height: auto;
+    }
+
+    .door-image {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
       cursor: pointer;
     }
 
-    #door-screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    /* Desktop: hover changes to open door */
+    @media (min-width: 601px) {
+      .door-image:hover {
+        content: url("content/bervard_2026.08_Door1.png");
+      }
     }
 
     .container {
@@ -166,7 +184,10 @@
 <body>
 
   <div id="door-screen">
-    <img src="content/bervard_2026.07_Door2.png" alt="Enter">
+    <div class="door-content">
+      <img class="door-top-image" src="content/bervard_2026.07_Logo2.png" alt="Espace W5">
+      <img class="door-image" src="content/bervard_2026.08_Door2.png" alt="Enter">
+    </div>
   </div>
 
   <header class="site-header">
@@ -254,20 +275,31 @@
   <script src="languages.js"></script>
 
   <script>
-    
     const doorScreen = document.getElementById("door-screen");
-
-    doorScreen.addEventListener("click", function () {
-      this.style.display = "none";
-    });
+    const doorImage = doorScreen.querySelector(".door-image");
 
     if (localStorage.getItem("doorSeen")) {
       doorScreen.style.display = "none";
     }
 
-    doorScreen.addEventListener("click", function () {
-      localStorage.setItem("doorSeen", "true");
-      this.classList.add("hidden");
+    doorImage.addEventListener("click", function () {
+
+      if (window.innerWidth <= 600) {
+
+        doorImage.src = "content/bervard_2026.08_Door1.png";
+
+        setTimeout(function () {
+          localStorage.setItem("doorSeen", "true");
+          doorScreen.style.display = "none";
+        }, 1000);
+
+      }
+
+      else {
+        localStorage.setItem("doorSeen", "true");
+        doorScreen.style.display = "none";
+      }
+
     });
   </script>
 </body>
