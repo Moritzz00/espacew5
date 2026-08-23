@@ -18,6 +18,25 @@
       line-height: 1.5;
     }
 
+    #door-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: #fff;
+      cursor: pointer;
+    }
+
+    #door-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .container {
       max-width: 700px;
       margin: 0 auto;
@@ -146,6 +165,10 @@
 
 <body>
 
+  <div id="door-screen">
+    <img src="content/bervard_2026.07_Door2.png" alt="Enter">
+  </div>
+
   <header class="site-header">
     <a href="/" class="logo">
       <img src="content/bervard_2026.07_Logo3.jpg" alt="Espace W5">
@@ -229,6 +252,24 @@
   </div>
 
   <script src="languages.js"></script>
+
+  <script>
+    
+    const doorScreen = document.getElementById("door-screen");
+
+    doorScreen.addEventListener("click", function () {
+      this.style.display = "none";
+    });
+
+    if (localStorage.getItem("doorSeen")) {
+      doorScreen.style.display = "none";
+    }
+
+    doorScreen.addEventListener("click", function () {
+      localStorage.setItem("doorSeen", "true");
+      this.classList.add("hidden");
+    });
+  </script>
 </body>
 
 </html>
