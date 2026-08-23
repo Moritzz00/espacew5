@@ -18,22 +18,38 @@
       line-height: 1.5;
     }
 
-    #door-screen {
+    html.no-scroll,
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    #door-overlay {
       position: fixed;
       inset: 0;
       z-index: 9999;
+    }
+
+    #door-background {
+      position: absolute;
+      inset: 0;
+      background: #fff;
+    }
+
+    #door-screen {
+      position: absolute;
+      inset: 0;
 
       display: flex;
       justify-content: center;
       align-items: center;
-
-      background: #fff;
     }
 
     .door-content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .door-top-image {
@@ -183,11 +199,17 @@
 
 <body>
 
-  <div id="door-screen">
-    <div class="door-content">
-      <img class="door-top-image" src="content/bervard_2026.07_Logo2.png" alt="Espace W5">
-      <img class="door-image" src="content/bervard_2026.08_Door2.png" alt="Enter">
+  <div id="door-overlay">
+
+    <div id="door-background"></div>
+
+    <div id="door-screen">
+      <div class="door-content">
+        <img class="door-top-image" src="content/bervard_2026.07_Logo2.png" alt="Espace W5">
+        <img class="door-image" src="content/bervard_2026.08_Door2.png" alt="Enter">
+      </div>
     </div>
+
   </div>
 
   <header class="site-header">
@@ -276,10 +298,17 @@
 
   <script>
     const doorScreen = document.getElementById("door-screen");
+    const doorBackground = document.getElementById("door-background");
     const doorImage = doorScreen.querySelector(".door-image");
+
+    document.documentElement.classList.add("no-scroll");
+    document.body.classList.add("no-scroll");
 
     if (localStorage.getItem("doorSeen")) {
       doorScreen.style.display = "none";
+      doorBackground.style.display = "none";
+      document.documentElement.classList.remove("no-scroll");
+      document.body.classList.remove("no-scroll");
     }
 
     doorImage.addEventListener("click", function () {
@@ -290,14 +319,24 @@
 
         setTimeout(function () {
           localStorage.setItem("doorSeen", "true");
+
           doorScreen.style.display = "none";
+          doorBackground.style.display = "none";
+
+          document.documentElement.classList.remove("no-scroll");
+          document.body.classList.remove("no-scroll");
+
         }, 1000);
 
-      }
+      } else {
 
-      else {
         localStorage.setItem("doorSeen", "true");
+
         doorScreen.style.display = "none";
+        doorBackground.style.display = "none";
+
+        document.documentElement.classList.remove("no-scroll");
+        document.body.classList.remove("no-scroll");
       }
 
     });
