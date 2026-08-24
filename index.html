@@ -241,7 +241,7 @@
     <div class="section">
       <p class="label" data-i18n="exhibition_period">Exhibition period:</p>
       <p>13.11.2026 – 22.11.2026</p>
-    </div>
+    </div>    
 
     <div class="section">
       <p class="label" data-i18n="project_description">Project description</p>
@@ -299,11 +299,12 @@
   <script>
     const doorScreen = document.getElementById("door-screen");
     const doorImage = doorScreen.querySelector(".door-image");
+    let doorClicked = false;
 
     document.documentElement.classList.add("no-scroll");
     document.body.classList.add("no-scroll");
 
-    if (localStorage.getItem("doorSeen")) {
+    if (doorClicked) {
       document.getElementById("door-overlay").style.display = "none";
       document.documentElement.classList.remove("no-scroll");
       document.body.classList.remove("no-scroll");
@@ -316,7 +317,7 @@
         doorImage.src = "content/bervard_2026.08_Door1.png";
 
         setTimeout(function () {
-          localStorage.setItem("doorSeen", "true");
+          doorClicked = true;
 
           document.getElementById("door-overlay").style.display = "none";
 
@@ -327,7 +328,7 @@
 
       } else {
 
-        localStorage.setItem("doorSeen", "true");
+        doorClicked = true;
 
         document.getElementById("door-overlay").style.display = "none";
 
