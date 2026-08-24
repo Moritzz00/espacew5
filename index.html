@@ -298,15 +298,13 @@
 
   <script>
     const doorScreen = document.getElementById("door-screen");
-    const doorBackground = document.getElementById("door-background");
     const doorImage = doorScreen.querySelector(".door-image");
 
     document.documentElement.classList.add("no-scroll");
     document.body.classList.add("no-scroll");
 
     if (localStorage.getItem("doorSeen")) {
-      doorScreen.style.display = "none";
-      doorBackground.style.display = "none";
+      document.getElementById("door-overlay").style.display = "none";
       document.documentElement.classList.remove("no-scroll");
       document.body.classList.remove("no-scroll");
     }
@@ -320,8 +318,7 @@
         setTimeout(function () {
           localStorage.setItem("doorSeen", "true");
 
-          doorScreen.style.display = "none";
-          doorBackground.style.display = "none";
+          document.getElementById("door-overlay").style.display = "none";
 
           document.documentElement.classList.remove("no-scroll");
           document.body.classList.remove("no-scroll");
@@ -332,8 +329,7 @@
 
         localStorage.setItem("doorSeen", "true");
 
-        doorScreen.style.display = "none";
-        doorBackground.style.display = "none";
+        document.getElementById("door-overlay").style.display = "none";
 
         document.documentElement.classList.remove("no-scroll");
         document.body.classList.remove("no-scroll");
