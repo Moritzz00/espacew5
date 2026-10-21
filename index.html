@@ -116,7 +116,13 @@
       font-weight: 600;
       margin-top: 20px;
     }
-
+    
+    .programm_label {
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 10px;      
+    }
+    
     a {
       color: #111;
       text-decoration: underline;
@@ -134,17 +140,34 @@
       margin: 3px 0;
     }
 
+    .sponsor-logos {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 90px;
+    }
+
     .ministry-logo {
       display: block;
-      max-width: 100%;
+      flex: 0 1 400px;
+      min-width: 0;
       height: auto;
-      margin-top: 90px;
-      max-width: 400px;
+    }
+
+    .fi-logo {
+      display: block;
+      flex-shrink: 0;
+      height: 95px;
+      width: auto;
     }
 
     @media (max-width: 600px) {
-      .ministry-logo {
-        max-width: 100%;
+      .sponsor-logos {
+        gap: 16px;
+      }
+
+      .fi-logo {
+        height: 60px;
       }
     }
 
@@ -186,6 +209,13 @@
         height: 400px;
         margin-left: -6px;
       }
+    }
+
+    .program img {
+      height: 1000px;    
+      display: block;
+      margin-top: -40px;
+      margin-left: -16px;
     }
 
     .title img {
@@ -256,7 +286,7 @@
 
     <div class="section">
       <p class="label" data-i18n="exhibition_opening">Exhibition opening:</p>
-      <p>13.11.2026</p>
+      <p>13.11.2026 | 18:00</p>
     </div>
 
     <div class="section">
@@ -285,9 +315,16 @@
     </div>
 
     <div class="section">
-      <p class="label" data-i18n="program">Program</p>
+      <p class="programm_label" data-i18n="programm">Programme</p>
+      <p class="workshop" data-i18n="opening_hours">Opening hours</p>
+      <!-- <p class="workshop" data-i18n="opening_hours_opening">13.11. (exhibition opening): </p> -->
+      <p class="workshop" data-i18n="opening_hours_weekdays">Monday – Friday: 16:00 – 19:00</p>
+      <p class="workshop" data-i18n="opening_hours_weekend">Saturday – Sunday: 11:00 – 19:00</p>
+      <br>
       <p class="workshop"><a data-i18n="workshop" href="https://espacew5.bigcartel.com">Book your workshop here!</a></p>
-      <p class="program_text">More to be announced soon :)</p>
+      <div class="program">
+        <img src="content/bervard_2026.10.08_Programm02.png" alt="Program">
+      </div>
     </div>
 
     <div class="section">
@@ -319,8 +356,12 @@
       <p><a href="/impressum" data-i18n="impressum">Impressum</a></p>
     </div>
 
-    <img class="ministry-logo" src="content/ministry-logo.png"
-      alt="Ministère de la Culture Luxembourg">
+    <div class="sponsor-logos">
+      <img class="ministry-logo" src="content/ministry-logo.png"
+        alt="Ministère de la Culture Luxembourg">
+      <img class="fi-logo" src="content/FI_logo_2025_neg_niveaux_de_gris.jpg"
+        alt="Fondation Indépendance">
+    </div>
 
   </div>
 
